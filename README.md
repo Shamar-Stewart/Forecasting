@@ -6,7 +6,7 @@ Periodically, I will update this document with relevant links to course notes an
 
 | Lecture 	|                    Topic                    	|Assignments                                    | 
 |---------	|:-------------------------------------------:	| :-------------------------------------------:	|
-| 1       	| [Introduction to Forecasting](Lectures/L1/1.Intro_Time_Series.pdf), R & RMarkdown 	  |                                              	|
+| 1       	| [Introduction to Forecasting](Lectures/L1/1.Intro_Time_Series.pdf), [R](https://htmlpreview.github.io/?https://github.com/Shamar-Stewart/Forecasting/blob/main/Lectures/L1/R_Introduction.nb.html) & [RMarkdown](https://htmlpreview.github.io/?https://github.com/Shamar-Stewart/Forecasting/blob/main/RMarkdown_Intro.html) 	  |                                              	|
 | 2       	|     Exploring & Visualizing Time Series     	|                                              	|
 |         	|                                              	|                                              	|
 |         	|           ***Univariate Models***           	|                                              	|
