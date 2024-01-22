@@ -1,4 +1,4 @@
-# AAEC (STAT) 5484 &amp; AAEC 4484 -- Applied Economic Forecasting
+# AAEC (STAT) 5484 & AAEC 4484 -- Applied Economic Forecasting
 ## Spring 2024
 
 Periodically, I will update this document with relevant links to course notes and associated class materials.
@@ -6,7 +6,7 @@ Periodically, I will update this document with relevant links to course notes an
 
 | Lecture 	|                    Topic                    	|Assignments                                    | 
 |---------	|:-------------------------------------------:	| :-------------------------------------------:	|
-| 1       	| [Introduction to Forecasting](Lectures/L1/1.Intro_Time_Series.pdf), [R](https://htmlpreview.github.io/?https://github.com/Shamar-Stewart/Forecasting/blob/main/Lectures/L1/R_Introduction.nb.html) & [RMarkdown](https://htmlpreview.github.io/?https://github.com/Shamar-Stewart/Forecasting/blob/main/Lectures/L1/RMarkdown_Intro.html) 	  |                                              	|
+| 1       	| [Introduction to Forecasting](Lectures/L1/1.Intro_Time_Series.pdf) <br> [Introduction to R](https://htmlpreview.github.io/?https://github.com/Shamar-Stewart/Forecasting/blob/main/Lectures/L1/R_Introduction.nb.html) </br> [Introduction to RMarkdown (Static)](https://htmlpreview.github.io/?https://github.com/Shamar-Stewart/Forecasting/blob/main/Lectures/L1/RMarkdown_Intro.html) </br> [Introduction to RMarkdown (Shinyapp -- Interactive)](https://aaec-vt.shinyapps.io/1_1-RMarkdown/#section-knowledge-check)  |                                              	|
 | 2       	|     Exploring & Visualizing Time Series     	|                                              	|
 |         	|                                              	|                                              	|
 |         	|           ***Univariate Models***           	|                                              	|
