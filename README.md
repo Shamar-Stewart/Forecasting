@@ -6,7 +6,7 @@ Periodically, I will update this document with relevant links to course notes an
 
 | Lecture 	|                    Topic                    	|Assignments                                    | 
 |---------	|:-------------------------------------------:	| :-------------------------------------------:	|
-| 1       	| Introduction to Forecasting, R & RMarkdown 	  |                                              	|
+| 1       	| [Introduction to Forecasting](Lectures/L1/1.Intro_Time_Series.pdf), R & RMarkdown 	  |                                              	|
 | 2       	|     Exploring & Visualizing Time Series     	|                                              	|
 |         	|                                              	|                                              	|
 |         	|           ***Univariate Models***           	|                                              	|
