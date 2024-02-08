@@ -1,0 +1,142 @@
+---
+title: "Notes on Stationary & White Noise Processes"
+author: "AAEC 4484/AAEC(STAT) 5484"
+date: "2024-02-07"
+output: pdf_document
+header-includes:
+  - \usepackage{cancel}
+geometry: margin=0.8in # sets the page margins
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Outline 
+
+The key idea of time series models is to exploit the past behavior of a time series to forecast its future development. This requires the future to be rather similar to the past, in other words, the past may repeat in future with certain probabilities. 
+
+This hypothesis is technically translated into an assumption of **weak stationarity**. Weak stationarity means that the variable under analysis has a stable mean and variance over time, and that the correlation of the variable with each of its own lags is also stable over time. 
+
+Any weakly stationary stochastic process can always be represented as a sum of the White noise (WN) processes, which have zero mean, uncorrelated over time and has a constant variance.
+
+## Stationarity
+
+Now, let's first start with the definitions. The first definition is “strict or strong stationarity,” which is defined as time series data have the same probability density function (PDF) over time, that is, $$f_{y_{1}}\left(y\right)=f_{y_{2}}\left(y\right)=\cdots=f_{y_{T}}\left(y\right)$$ 
+where the PDF is a function used to specify the probability of the random variable falling within a particular range of values, $Pr(a\le X\le b)=\int_{a}^{b}f_{X}(x)dx$.
+
+If the data have the same PDF everywhere in the sample, it should have
+
+- the same mean
+- the same variance
+- the same skewness (the third moment)
+- the same kurtosis (the fourth moment)
+- all other higher moments
+
+However, in reality, it is really hard to find empirical data which satisfies this strict stationarity. Often times, we relax the strict stationarity for two forms of weak stationarity.
+
+1. One is the first-order weak stationarity or the mean stationarity, which is defined as time series data have the same mean (first moment) over the sample, that is $$\mu_{y_{1}}=\mu_{y_{2}}=\cdots=\mu_{y_{T}}=\mu$$ is constant over time.
+
+2. Another weak stationarity is the **second-order weak stationary**, so called “covariance-stationary”, defined as time series data have the same mean and variance over time, and the covariances do not depend on time, that is 
+\begin{align*}
+\text{(i) } &	\mu_{y_{1}}=\mu_{y_{2}}=\cdots=\mu_{y_{T}}=\mu\\
+\text{(ii) } &	\sigma_{y_{1}}^{2} = \sigma_{y_{2}}^{2}=\cdots=\sigma_{y_{T}}^{2}=\sigma^{2}\\
+\text{(iii) } &	\rho_{y_{t},y_{t-k}} =\rho_{|k|}
+\end{align*}
+
+where $\rho_{y_{t},y_{t-k}}$ is the autocorrelation between $y_{t}$ and $y_{t-k}$, defined as
+\begin{align*}
+\gamma_{y_{t},y_{t-k}}= \mathbf{Cov}(y_{t},y_{t-k})&=\mathbf{E}\left[\left(y_{t}-\mathbf{E}(y_{t})\right)\left(y_{t-k}-\mathbf{E}(y_{t-k})\right)\right]\\
+&=	\mathbf{E}\left[\left(y_{t}-\mu\right)\left(y_{t-k}-\mu\right)\right]
+\end{align*}
+
+Note $\gamma_{k}$ is time independent of $t$ and only depends on the distance between two observations, $y_{i}$ and $y_{j}$, where $i-j=k$.
+
+Therefore, a time series process is weakly stationary if the following three conditions are satisfied simultaneously 
+
+1. $\mathbf{E}(y_{t})=\mu_{y}$ is constant
+
+2. $\mathbf{Var}(y_{t})=\sigma_{y}^{2}$ is constant
+
+3. $\mathbf{Cov}(y_{t},y_{t-k})=\gamma_{k}$ is constant
+
+
+## White Noise Process
+
+White noise is a special case of a covariance stationary variable, 
+
+i. it not only has constant mean, **but the constant mean is zero**, 
+ii. it also has constant variance over time.
+iii. **its auto-covariance is zero as well.**
+
+---
+
+***Therefore, if a random variable is a White noise, it must be covariance stationary. However, if a random variable is covariance stationary, it may not be a White noise.***
+
+---
+
+## Our Example
+
+As an example, assume that 
+$$y_{t}=\varepsilon_{t}+c_{1}\varepsilon_{t-1}$$
+where $\varepsilon_{t}\sim WN(0,\sigma^{2})$ and $c_{1}$ is a non-zero constant.
+
+We can easily show that a linear combination of WN processes might not necessarily be a WN process.
+
+Recall that for a variable to be considered a white noise process, it must satisfy the following conditions:
+
+1. It must have a constant mean of zero.
+2. It must have a constant variance.
+3. It must have zero autocorrelation at all lags.
+
+Let us assess whether the process $y_{t}$ satisfies these conditions.
+
+1. The mean of $y_{t}$ is given by
+$$\mathbf{E}(y_{t})=\mathbf{E}\left(\varepsilon_{t}+c_{1}\varepsilon_{t-1}\right)=\cancelto{0}{\mathbf{E}(\varepsilon_{t})}+c_{1}\cancelto{0}{\mathbf{E}(\varepsilon_{t-1})}=0\; \checkmark\checkmark$$
+
+Hence, $y_t$ has a constant mean.
+
+2. The variance of $y_{t}$ is given by
+\begin{align*}
+\mathbf{Var}(y_{t})&=\mathbf{E}\left[\left(y_{t}-\mathbf{E}(y_{t})\right)^{2}\right]\\
+&=\mathbf{E}\left(\varepsilon_{t}+c_{1}\varepsilon_{t-1}\right)^{2}\\
+&=\mathbf{E}(\varepsilon_{t}^{2})+c_{1}^{2}\mathbf{E}(\varepsilon_{t-1}^{2})+2c_1\cancelto{0}{\mathbf{E}(\varepsilon_{t}\varepsilon_{t-1})}; 
+\end{align*}
+
+Since $\varepsilon_{t}\sim WN(0,\sigma^{2})$, such that $\mathbf{E}(\varepsilon_{t}^{2})=\mathbf{E}(\varepsilon_{t-1}^{2})=\sigma^{2}$ and $\mathbf{E}(\varepsilon_{t}\varepsilon_{t-1})=0$, and hence 
+\begin{align*}
+\mathbf{Var}(y_{t}) &=\sigma^2 + c_{1}^{2}\sigma^{2}\\
+&= \left(1+c_{1}^{2}\right)\sigma^{2}\;\checkmark\checkmark\\
+\end{align*}
+
+Therefore, $y_{t}$ has a constant variance.
+
+3. The autocovariances of $y_{t}$ are as follows:
+\begin{align*}
+\gamma_{0} &= \mathbf{Cov}(y_t, y_t) = \mathbf{Var}(y_{t})\\
+\gamma_{1} &= \mathbf{Cov}(y_{t},y_{t-1})=\mathbf{E}\left[(y_{t}-\mathbf{E}(y_{t}))(y_{t-1}-\mathbf{E}(y_{t-1}))\right]\\
+	&=\mathbf{E}(y_{t}y_{t-1})\\
+	&=\mathbf{E}(\varepsilon_{t}+c_{1}\varepsilon_{t-1})\left(\varepsilon_{t-1}+c_{1}\varepsilon_{t-2}\right)\\
+	&=\cancelto{0}{\mathbf{E}\left(\varepsilon_{t}\varepsilon_{t-1}\right)}+c_{1}\mathbf{E}\left(\varepsilon_{t-1}^{2}\right)+c_{1}\mathbf{E}\left(\varepsilon_{t}\varepsilon_{t-2}\right)+c_{2}^{2}\cancelto{0}{\mathbf{E}\left(\varepsilon_{t-1}\varepsilon_{t-2}\right)}\\
+	&=c_{1}\sigma^{2}\; \boldsymbol{\times}\\
+\gamma_{2}	&= \mathbf{Cov}(y_{t},y_{t-2})=\mathbf{E}(y_{t}-\mathbf{E}(y_{t}))(y_{t-2}-\mathbf{E}(y_{t-2}))\\
+	&= \mathbf{E}(y_{t}y_{t-2})\\
+	&= \mathbf{E}(\varepsilon_{t}+c_{1}\varepsilon_{t-1})\left(\varepsilon_{t-2}+c_{1}\varepsilon_{t-3}\right)\\
+	&= \cancelto{0}{\mathbf{E}\left(\varepsilon_{t}\varepsilon_{t-2}\right)}+c_{1}\cancelto{0}{\mathbf{E}\left(\varepsilon_{t-1}\varepsilon_{t-2}\right)}+c_{1}\cancelto{0}{\mathbf{E}\left(\varepsilon_{t}\varepsilon_{t-3}\right)}+c_{2}^{2}\cancelto{0}{\mathbf{E}\left(\varepsilon_{t-1}\varepsilon_{t-3}\right)}\\
+	&=0\\
+	& \vdots\\
+\gamma_{k}	&=0,\forall k>1
+\end{align*}
+
+We can quickly compute the autocorrelation coefficients as follows:
+\begin{align*}
+\rho_{0} &= \frac{\gamma_{0}}{\gamma_{0}}=1\\
+\rho_{1} &= \frac{\gamma_{1}}{\gamma_{0}}=\frac{c_{1}\sigma^{2}}{\left(1+c_{1}^{2}\right)\sigma^{2}}=\frac{c_{1}}{1 + c_1^2}\; \boldsymbol{\times}\\
+\rho_{2} &= \frac{\gamma_{2}}{\gamma_{0}}=\frac{0}{\left(1+c_{1}^{2}\right)\sigma^{2}}=0\\
+\vdots\\
+\rho_{k} &=0,\forall k>1
+\end{align*}
+
+$y_{t}$ has a covariance that is independent of time. However, the autocorrelation of $y_{t}$ is not zero at all lags. Therefore, $y_{t}$ is not a WN process.
+
