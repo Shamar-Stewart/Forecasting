@@ -1,6 +1,6 @@
 ---
 title: 'AAEC 4984/5484: Applied Economic Forecasting'
-author: __Master Key__
+author: "Your Name Here"
 date: |
     Homework #3 - Spring `r format(Sys.Date(),"%Y")` 
 output: pdf_document
