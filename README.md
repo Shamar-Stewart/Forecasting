@@ -13,7 +13,7 @@ Periodically, I will update this document with relevant links to course notes an
 | 4       	|   [Linear Time Series Regressions](Lectures/L4/4.Linear_and_Dynamic_Time_Series_Regressions.pdf)  	|  [HW4 (pdf)](Homework/HW4/AAEC_4984-AAEC_STAT-5484_HW4_S24.pdf) <br> [HW4 (RMD)](Homework/HW4/AAEC_4984-AAEC_STAT-5484_HW4_S24.Rmd)                                            	|
 |         	|        ~**Exam 1 -- March 1, 2024**~        	|                                              	|
 |         	|     **SPRING BREAK: March 4 -- 8, 2024**    	|                                              	|
-| 5       	|          [Time Series Decompositions: Lecture](Lectures/L5/5.Time_Series_Decomposition.pdf) <br> [Time Series Decompositions: R Notebook](https://htmlpreview.github.io/?https://github.com/Shamar-Stewart/Forecasting/blob/main/Lectures/Lectures/L5/Manual_Decomposition.nb.html)         	|                                              	|
+| 5       	|          [Time Series Decompositions: Lecture](Lectures/L5/5.Time_Series_Decomposition.pdf) <br> [Time Series Decompositions: R Notebook](https://htmlpreview.github.io/?https://github.com/Shamar-Stewart/Forecasting/blob/17b69570365440f3852fa7efc7be33ce89000f75/Lectures/L5/Manual_Decomposition.nb.html)         	|                                              	|
 |         	|        **Exam 1 -- March 29, 2024**        	|                                              	|
 | 6       	|            Exponential Smoothing            	|                                              	|
 |      	    | **Project Proposal Due - April 5, 2024** <br> ${\color{blue}\text{(GRAD ONLY)}}$ </br>     |
