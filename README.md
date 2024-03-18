@@ -10,7 +10,7 @@ Periodically, I will update this document with relevant links to course notes an
 | 2       	|     [Exploring & Visualizing Time Series](Lectures/L2/2-Visualizing-Time-Series.pdf) <br> [Stationary & White Noise Processes](Lectures/L2/White_Noise_Notes.pdf)    	|    [HW2 (RMD) - Due: Feb 14, 2024](Homework/HW2/AAEC_4984-AAEC_STAT-5484_HW2_S24.Rmd) <br> [HW2 (pdf)](Homework/HW2/AAEC_4984-AAEC_STAT-5484_HW2_S24.pdf) </br>                                          	|
 |         	|           ***Univariate Models***           	|                                              	|
 | 3       	|           [Basic Forecasting Models](Lectures/L3/3.Evaluation_of_Basic_Forecasting_Models.pdf)          	|[HW3 (pdf)](Homework/HW3/AAEC_4984-AAEC_STAT-5484_HW3_S24.pdf)<br> [HW3 (RMD)](Homework/HW3/AAEC_4984-AAEC_STAT-5484_HW3_S24.Rmd)</br>                                              	|
-| 4       	|   [Linear Time Series Regressions](Lectures/L4/4.Linear_and_Dynamic_Time_Series_Regressions.pdf)  	|                                              	|
+| 4       	|   [Linear Time Series Regressions](Lectures/L4/4.Linear_and_Dynamic_Time_Series_Regressions.pdf)  	|  [HW4 (pdf)](Homework/HW4/AAEC_4984-AAEC_STAT-5484_HW4_S24.pdf) <br> [HW4 (RMD)](Homework/HW4/AAEC_4984-AAEC_STAT-5484_HW4_S24.Rmd)                                            	|
 |         	|         **Exam 1 -- March 1, 2024**         	|                                              	|
 |         	|     **SPRING BREAK: March 4 -- 8, 2024**    	|                                              	|
 | 5       	|          Time Series Decompositions         	|                                              	|
