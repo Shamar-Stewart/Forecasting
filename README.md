@@ -15,7 +15,7 @@ Periodically, I will update this document with relevant links to course notes an
 |         	|     **SPRING BREAK: March 4 -- 8, 2024**    	|                                              	|
 | 5       	|          [Time Series Decompositions: Lecture](Lectures/L5/5.Time_Series_Decomposition.pdf) <br> [Time Series Decompositions: R Notebook](https://htmlpreview.github.io/?https://github.com/Shamar-Stewart/Forecasting/blob/17b69570365440f3852fa7efc7be33ce89000f75/Lectures/L5/Manual_Decomposition.nb.html)         	|                                              	|
 |         	|        **Exam 1 -- March 29, 2024**        	|                                              	|
-| 6       	|            Exponential Smoothing            	|                                              	|
+| 6       	|            [Exponential Smoothing](Lectures/L6/6.Moving_Averages_-_Exponential_Smoothing.pdf)            	|   [HW5 (pdf)](Homework/HW5/AAEC_4984-AAEC_STAT-5484_HW5_S24.pdf) <br> [HW5 (RMD)](Homework/HW5/AAEC_4984-AAEC_STAT-5484_HW5_S24.Rmd)                                           	|
 |      	    | **Project Proposal Due - April 5, 2024** <br> ${\color{blue}\text{(GRAD ONLY)}}$ </br>     |
 | 7       	|        ARIMA & Seasonal ARIMA Models        	|                                              	|
 |         	|                                              	|                                              	|
