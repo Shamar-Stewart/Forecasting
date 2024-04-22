@@ -1,0 +1,106 @@
+---
+title: 'AAEC 4484/AAEC(STAT) 5484: Applied Economic Forecasting'
+author: "Your Name Here"
+date: |
+    Homework #7 - Spring `r format(Sys.Date(),"%Y")` 
+output: pdf_document
+header-includes:
+ \usepackage{float}
+geometry: margin=0.8in
+---
+
+
+```{r setup, include=FALSE}
+library(fpp3)
+library(quantmod)
+knitr::opts_chunk$set(echo = TRUE, fig.pos = 'H', 
+                      fig.height = 3,
+                      out.width="\\textwidth", 
+                      warning = FALSE, size = "small") 
+theme_set(theme_minimal() +
+            theme(legend.text = element_text(size =6)))
+
+
+```
+
+**Instructions**: Please ensure that your graphs and visuals have proper titles and axis labels, where necessary. Refer to the output, whenever appropriate, when discussing the results. **Lastly, remember that creativity (coupled with relevance) will be rewarded.**
+
+# Question 1: Forecasting U.S. Leisure and Hospitality Employment
+
+The U.S. Bureau of Labor Statistics (BLS) provides a wealth of data on employment in various economic sectors. In this question, we will focus on the Leisure and Hospitality sector.
+
+(a) Pull the All Employees, Leisure and Hospitality (`CEU7000000001`) series from the FRED database using the `quantmod` package. Convert the data to a `tsibble` object with the appropriate time index. 
+
+
+
+(b) Provide a time-series plot of the data and comment on your observations. 
+
+- Be sure to include a discussion on any potential seasonality and or trend. 
+- Specific to the variance, does the data need transforming before estimations? If so, what kind of transformation would you recommend? **A simple yes will not suffice. Be sure to discuss your reasoning.**
+  - Produce a plot of the transformed data series.
+
+
+
+(c) Peter believes that your transformed series in (b) is stationary. Explain to him briefly why you agree or disagree with his assertion. If appropriate, perform the necessary differencing to render the series stationary. If this is neither appropriate nor necessary, explain why. 
+
+Be sure to conduct the necessary unit root test, as appropriate, to support your argument. As always, ensure you include a discussion of the null hypothesis of the test, the decision rule, and your conclusion. 
+
+ 
+
+
+(d) Perform the Box-Jenkins procedure to determine the candidate ARIMA models for this data. **You can skip any step that you have already explored above. Just make sure you reference that in your answer so that I can follow along.**
+
+- **Be sure to:**
+  - **Report your preferred model and explain how you arrived at this specification.
+    - **Note: Unlike our approach in class of writing down and individually coding all the models, I am OK with you testing over ranges (for the lags) and allowing `R` to minimize as appropriate. You will still need to explain your reasoning, though.** 
+  - **Report the diagnostic checks to justify the adequacy of your model. Comment on the Ljung-Box (LB) test results. Be sure to account for the appropriate degrees of freedom and lags of the LB test.**
+
+
+
+(e) You might notice and recall that COVID-19 had a significant impact on the Leisure and Hospitality sector. Let us account for this by including a `COVID-19` dummy as an exogenous variable in our model. 
+
+- Re-estimate your ARIMA model to include `COVID`, a dummy variable that takes the value of 1 from **March 2020 (when the first state of emergency was issued) to April 2023 (when the national emergency was lifted)** and 0 otherwise. **I would like you to use an `if_else` statement to create this dummy variable.**
+
+- Report the results of your model. Is the COVID dummy a significant predictor of the employment series? Explain, in full detail, why or why not.
+
+**Note: You can allow `R` to auto-select the best model for you. However, be sure to force the seasonal (`D`) and non-seasonal (`d`) differences to be the same as you had above.**
+
+
+
+(f) Conduct diagnostic checks on the model in (e) and comment on its adequacy. Again, remember to account for the appropriate lags and degrees of freedom.
+
+
+
+(g) Assuming that your model in (f) is adequate, provide a forecast of the employment series for the next three (3) years. If it was not, what would you do to improve the model?
+
+
+
+
+\newpage
+
+# Question 2: Forecasting C02
+
+Carbon Emissions is an ever-evolving and interesting issue among environmental activists and academics alike. 
+
+(a) Use the `quantmod` package to pull Annual Transportation Carbon Dioxide Emissions, All Fuels for United States (`EMISSCO2TOTVTCTOUSA`) from `FRED` and declare as a `tsibble` object. **You will need to adjust the time index to match the appropriate years.** Next, drop all observations after 2019.
+
+
+
+
+(b)  Provide a time-series plot of the data and comment on its stationarity. 
+
+
+
+
+(c) Perform the Box-Jenkins procedure to determine the candidate models for this data. 
+
+- **Be sure to:**
+  - **Perform formal unit root testing. You will need to specify the null hypothesis (hypotheses) and corresponding conclusions of the unit root test(s) used.**
+  - **present the AIC and BIC statistics of your candidate model(s) in a table using the `kable()` function. Columns and Rows should be properly labeled.**
+  - **Explain how you arrived at your preferred model.**
+  - **Report the diagnostic checks to justify the adequacy of your model. Comment on the Ljung-Box test results.**
+  
+  
+  
+
+(d) Using your preferred model, present an `autoplot` of the forecast for the next five (5) years. 
