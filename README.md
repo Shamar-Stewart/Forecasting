@@ -17,7 +17,7 @@ Periodically, I will update this document with relevant links to course notes an
 |         	|        **Exam 1 -- March 29, 2024**        	|                                              	|
 | 6       	|            [Exponential Smoothing](Lectures/L6/6.Moving_Averages_-_Exponential_Smoothing.pdf)            	|   [HW5 (pdf)](Homework/HW5/AAEC_4984-AAEC_STAT-5484_HW5_S24.pdf) <br> [HW5 (RMD)](Homework/HW5/AAEC_4984-AAEC_STAT-5484_HW5_S24.Rmd)                                           	|
 |      	    | **Project Proposal Due - April 5, 2024** <br> ${\color{blue}\text{(GRAD ONLY)}}$ </br>     |
-| 7       	|        ARIMA & Seasonal ARIMA Models        	|                                              	|
+| 7       	|        ARIMA & Seasonal ARIMA Models        	| [HW6 (pdf)](Homework/HW6/AAEC_4984-AAEC_STAT-5484_HW6_S24.pdf) <br> [HW6 (RMD)](Homework/HW6/AAEC_4984-AAEC_STAT-5484_HW6_S24.Rmd)                                             	|
 |         	|                                              	|                                              	|
 |         	|          ***Multivariate Models***          	|                                              	|
 | 8       	|              VAR & SVAR Models              	|                                              	|      
