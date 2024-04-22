@@ -20,7 +20,7 @@ Periodically, I will update this document with relevant links to course notes an
 | 7       	|        ARIMA & Seasonal ARIMA Models        	| [HW6 (pdf)](Homework/HW6/AAEC_4984-AAEC_STAT-5484_HW6_S24.pdf) <br> [HW6 (RMD)](Homework/HW6/AAEC_4984-AAEC_STAT-5484_HW6_S24.Rmd)                                             	|
 |         	|                                              	|                                              	|
 |         	|          ***Multivariate Models***          	|                                              	|
-| 8       	|              VAR & SVAR Models              	|                                              	|      
+| 8       	|              VAR & SVAR Models              	| [HW7 (pdf)](Homework/HW7/AAEC_4984_5484_HW7_S24.pdf)<br> [HW7 (RMD)](Homework/HW7/AAEC_4984_5484_HW7_S24.Rmd)                                             	|      
 | 9       	|              Volatility Models              	|                                              	|
 | 10      	|      Forecast Evaluation & Combination      	|                                              	|         
 |         	|           **EXAM 2 - May 1, 2024**          	|                                              	|    
