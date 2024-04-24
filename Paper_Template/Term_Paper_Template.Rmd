@@ -1,0 +1,138 @@
+---
+title: "Writing Your Term Paper in RMarkdown"
+thanks: |
+  First, I would like to thank all the little people... You can omit if they never believed in you anyway."
+author: |
+  This is Me!   
+  Agricultural And Applied Economics Department, Virginia Tech
+
+output: 
+  pdf_document:
+    citation_package: natbib
+    latex_engine: pdflatex
+    # template: paper-latex-template.tex
+
+geometry: margin=0.8in
+mainfont: Helvetica
+fontsize: 11pt
+spacing: onehalf
+bibliography: "Term-paper-references.bib"
+biblio-style: apalike
+header-includes:
+ \usepackage{float}
+ \usepackage{authblk}
+ 
+citecolor: blue
+linkcolor: magenta
+
+abstract: |
+
+ Ideally, this section should be no more than 150 words:
+  
+    - One or two sentences providing a **basic introduction and background to the problem**. This should not be technical and  understandable to a lay-person.
+    
+    - One or two sentences telling what you did (in terms of the methodology)
+    
+    - One or two sentences summarizing the main result (with the words "**here we show**" or their equivalent).
+    
+    - One or two sentences that indicates the importance of your results. Again, this should not be technical.
+    
+# 3-5 words related to topic. Helps with Google searches, for example    
+keywords: "pandoc, r markdown, knitr" 
+---
+
+```{r setup, include = FALSE}
+#Include your packages here
+library(fpp3)
+#Mute the codes in your paper
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, 
+                      warning=FALSE, dev="cairo_pdf",
+                      fig.height = 2,
+                      out.width="\\textwidth", 
+                      warning = FALSE, size = "small") 
+theme_set(theme_light() + theme(legend.position = "bottom"))
+```
+
+# Introduction & Background[^1]
+
+[^1]: This is a footnote. A single hashtag, `#`, will create a section header. Two hashtags, `##`, will create a subsection header. Three hashtags, `###`, will create a subsubsection header, amd so on.
+
+The Wealth of Nations was published March 9, 1776, [see @R-papaja, for further details] during the Scottish Enlightenment and the Scottish Agricultural Revolution[e.g. @R-papaja]. It influenced several authors and economists, such as Karl Marx, as well as governments and organizations, setting the terms for economic debate and discussion for the next century and a half [@R-base; @R-papaja]. For example, Alexander Hamilton was influenced in part by The Wealth of Nations to write his Report on Manufactures, in which he argued against many of Smith's policies. Hamilton based much of this report on the ideas of Jean-Baptiste Colbert, and it was, in part, Colbert's ideas that Smith responded to, and criticized, with The Wealth of Nations.[^2]
+
+[^2]: Again, I add a footnote to this sentence.
+
+@R-base indicates that the Wealth of Nations was the product of seventeen years of notes and earlier works, as well as an observation of conversation among economists of the time concerning economic and societal conditions during the beginning of the Industrial Revolution, and it took Smith some ten years to produce.
+
+*Task:*
+
+- **Add a few citations to your bib file and practice in-text citations. It is easiest to use Google Scholar's citation feature.**
+
+# Methodology
+
+## Model Specification
+
+*Task:*
+
+- **Insert Some Equations. And use equation referencing.**
+
+**Numbered Single Equation (centered mode)** \begin{equation}
+\frac{\mathrm{d} n}{\mathrm{d} t} = \underbrace{c n \left(1 - \frac{n}{N}\right)}_{\textrm{birth}} - \underbrace{e n}_{\textrm{death}}, \label{levins}
+\end{equation}
+
+where $n$ is the population size at time $t$, $c$ is the birth rate, $N$ is the carrying capacity, and $e$ is the death rate
+
+Referencing the equation: \ref{levins} is the logistic growth model.
+
+**Numbered Multiple Equations (align mode)**
+
+```{=tex}
+\begin{align}
+\frac{\mathrm{d} n}{\mathrm{d} t} &= \underbrace{c n \left(1 - \frac{n}{N}\right)}_{\textrm{birth}} - \underbrace{e n}_{\textrm{death}} \label{levins2} \\
+\frac{\mathrm{d} n}{\mathrm{d} t} &= \underbrace{c n \left(1 - \frac{n}{N}\right)}_{\textrm{birth}} - \underbrace{e n}_{\textrm{death}} \label{levins3}\\
+\frac{\mathrm{d} n}{\mathrm{d} t} &= \underbrace{c n \left(1 - \frac{n}{N}\right)}_{\textrm{birth}} - \underbrace{e n}_{\textrm{death}}\notag
+\end{align}
+```
+As seen in \ref{levins2} and \ref{levins3}, the logistic growth model can be written in multiple lines using the `align` function. Our equations are aligned at the ampersand, `&`, and the double backslash, `\\`, is used to separate the equations. The `notag` command is used to suppress equation numbering for the last equation.
+
+If you wanted all equation numbering to be suppressed but still wanted to align the equations, you could use the `align*` function instead.
+
+**Inline Equations**
+
+Inline equations can be written using the dollar sign, `$`, like this: $y = mx + b$.
+
+**Un-numbered Single Equation (centered mode)**
+
+Single line display equations can be written using the double dollar sign, `$$`, like this: $$y = mx + b.$$
+
+# Empirical Results
+
+## Data
+
+**Discuss your data and the relevant data sources here.** Be sure to indicate your sample period and the frequency of the data. \footnote{here is another quick way to add footnotes using the LaTex `footnote` command.}
+
+## Results
+
+**Discuss the results of your paper here**
+
+```{r test, fig.cap="Plots should always have a caption."}
+mtcars |> ggplot(aes(x = mpg, disp)) +
+  geom_point(aes(col = as.factor(cyl))) +
+  guides(colour = 
+           guide_legend("Cylinder")) +
+  labs(title = NULL, x = "Miles per Gallon",
+       y = "Displacement (cu. inches)")
+```
+
+# Conclusion
+
+-   **What do you conclude?**
+-   **What are the implications of your results?**
+    -   **Who would these results matter to and how has/will your paper and results helped them?**
+-   **Are there limitations to your study and/or avenues for future research?**
+
+\newpage
+
+# References
+
+::: {#refs custom-style="Bibliography"}
+:::
